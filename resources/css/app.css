@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .nav.router-link-active {
+        @apply bg-teal-600 text-white rounded-sm;
+    }
+}

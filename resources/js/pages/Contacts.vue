@@ -1,0 +1,41 @@
+<template>
+    <section>
+        <h3 class="text-sm mb-3 font-semibold ">
+            Kontaktlar
+        </h3>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0a21f97abf51840eca8af4f5dfbb5136d4b6b3103838842bc28abfd9259a541e&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+
+        <div class="mt-10">
+            <section class="pl-7 py-3 border-l border-yellow-500 mb-5">
+                <h4 class="mb-2">
+                    <i class="fa-duotone fa-house-chimney text-teal-600 mr-3"></i> Manzil
+                </h4>
+                <main class="text-sm text-gray-600">
+                    Navoiy viloyati Uchquduq <br> Shaxri Xalqlar do`stligi
+                </main>
+            </section>
+
+            <section class="pl-7 py-3 border-l border-yellow-500 mb-5">
+                <h4 class="mb-2">
+                    <i class="fa-duotone fa-phone text-teal-600 mr-3"></i> Telefon raqamlar
+                </h4>
+                <main class="text-sm text-gray-600">
+                    +998 93 3105148 <br> +998 93 5212585
+                </main>
+            </section>
+
+            <section class="pl-7 py-3 border-l border-yellow-500 mb-5">
+                <h4 class="mb-2">
+                    <i class="fa-solid fa-envelope text-teal-600 mr-3"></i> Pochta
+                </h4>
+                <main class="text-sm text-gray-600">
+                    strelok0493@gmail.com
+                </main>
+            </section>
+        </div>
+    </section>
+</template>
+
+<script setup lang="ts">
+
+</script>
