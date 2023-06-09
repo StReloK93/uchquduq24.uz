@@ -20,7 +20,7 @@ const pageData = reactive({
     randomPosts: null
 })
 
-axios.get('/api/postsrandom').then(({data}) => {
+axios.get('postsrandom').then(({data}) => {
     pageData.randomPosts = data
 })
 </script>

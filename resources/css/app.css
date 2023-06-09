@@ -7,4 +7,12 @@
     .nav.router-link-active {
         @apply bg-teal-600 text-white rounded-sm;
     }
+
+    .admin.router-link-active {
+        @apply border-blue-500 bg-blue-50 text-blue-500;
+    }
+    
+    .text-input{
+		@apply border-b border-gray-200 outline-none p-1;
+	}
 }

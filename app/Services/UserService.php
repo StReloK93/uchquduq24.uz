@@ -9,7 +9,7 @@ class UserService {
 
     public function login($request) {
 
-        if (Auth::attempt($request->only('phone', 'password'))) {
+        if (Auth::attempt($request->only('email', 'password'))) {
 
             $user = Auth::user();
             $token = $this->createToken($user, $request);
@@ -21,7 +21,7 @@ class UserService {
     }
 
     private function createToken($user,$request) {
-        return $user->createToken( $request['device'], [$user->isActive])->plainTextToken;
+        return $user->createToken( 'userToken', [$user->isActive])->plainTextToken;
     }
 
 
@@ -35,8 +35,6 @@ class UserService {
 
     public function getUser($request){
         return $request->user();
-
-        // return $user;
     }
 
     public function setShop($shopid){

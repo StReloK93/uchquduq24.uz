@@ -12,7 +12,7 @@
         </aside>
         <aside v-else class="flex">
             <main class="w-48">
-                <img v-if="imgFail" :src="`https://uchquduq24.uz/img/${post.post_img}`" @error="imgFail = false" class="w-full h-48 object-cover rounded block">
+                <img v-if="imgFail" :src="`/img/${post.images[0]?.src}`" @error="imgFail = false" class="w-full h-48 object-cover rounded block">
                 <div v-else class="bg-gray-200 h-48 shadow-sm">
                 
                 </div>
@@ -27,8 +27,7 @@
                             {{ post.created_at }}
                         </span>
                     </aside>
-                    <p class="text-gray-500 text-justify text-ellipsis line-clamp-3 cardpost" v-html="post.post_desc">
-                    </p>
+                    <p class="text-gray-500 text-justify text-ellipsis line-clamp-3 cardpost" v-html="post.post_desc"></p>
                 </div>
                 <div class="text-right">
                     <router-link :to="{name: 'post' , params: {id: post.id}}"

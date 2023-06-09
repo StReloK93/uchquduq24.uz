@@ -27,9 +27,23 @@ export const routes: RouteRecordRaw[] = [
 		path: '/contacts',
 		component: () => import('@/pages/Contacts.vue'),
 		name: 'contacts',
+	},
+	{
+		path: '/login',
+		component: () => import('@/pages/Login.vue'),
+		name: 'login',
+		meta: {
+			guard: 'guest',
+		},
+	},
+	{
+		path: '/admin/:id',
+		component: () => import('@/pages/AdminPages/AdminHome.vue'),
+		name: 'admin',
+		meta: {
+			guard: 'auth',
+			adminPage: true
+		}
 	}
 ]
 
-// meta: {
-// 	guard: 'auth',
-// },

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Post;
 use Illuminate\Support\Facades\Http;
+use DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
 
         // $response = Http::get('https://nbu.uz/en/exchange-rates/json');
         // dd(json_decode($response));
-        
+
     }
 }

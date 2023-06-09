@@ -5,16 +5,26 @@
                 <h3 class="bg-gray-300 h-5 skeleton w-[420px] mb-4"></h3>
                 <h3 class="bg-gray-300 h-4 skeleton w-80"></h3>
             </div>
-            <img v-if="post" :src="`https://uchquduq24.uz/img/${post?.post_img}`" class="w-full h-[600px] object-cover">
-            <div v-if="post" class="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-stone-900/40 to-stone-900/30 flex justify-center items-center">
-                <h3 class="text-white font-bold text-3xl">
-                    {{ post?.post_name }}
-                </h3>
-            </div>
+            <swiper
+                :slides-per-view="1"
+                :space-between="10"
+            >
+                <swiper-slide v-for="image in post?.images">
+                    <img v-if="post" :src="`/img/${image.src}`" class="w-full h-[600px] object-cover">
+                    <div v-if="post" class="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-stone-900/40 to-stone-900/30 flex justify-center items-center">
+                        <h3 class="text-white font-bold text-3xl">
+                            {{ post?.post_name }}
+                        </h3>
+                    </div>
+                </swiper-slide>
+            </swiper>
         </header>
         <main class="flex -mx-3 mt-6 flex-wrap">
             <h3 v-if="post == null" class="px-3 bg-gray-200 h-7 skeleton w-[420px] mb-5 ml-3"></h3>
-            <h3 v-else class="w-full px-3 text-xl mb-5 font-semibold text-gray-700">{{ post?.post_name }}</h3>
+            <h3 v-else class="w-full px-3 mb-5 flex justify-between">
+                <span class="text-xl  font-semibold text-gray-700">{{ post?.post_name }}</span>
+                <span class="text-gray-500 text-sm">{{ post.created_at }} <i class="fa-light fa-calendar-lines text-pink-500"></i></span>
+            </h3>
             
             <div class="px-3 w-3/4" v-if="post == null">
                 <main class="bg-gray-200 skeleton h-80"></main>
@@ -27,6 +37,8 @@
 
 <script setup lang="ts">
 import RandomPosts from '@/components/RandomPosts.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css';
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 import { ref , watch} from 'vue'
@@ -37,7 +49,7 @@ const post = ref(null)
 
 function getPost(id){
     post.value = null
-    axios.get(`/api/posts/${id}`).then(({data}) => {
+    axios.get(`posts/${id}`).then(({data}) => {
         post.value = data
     })
 }

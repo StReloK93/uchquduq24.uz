@@ -37,7 +37,7 @@
                     <CardPost v-for="post in pageData.posts.data" :post="post" class="mb-8"/>
                 </aside>
 
-                <Pagination :posts="pageData.posts" />
+                <Pagination :posts="pageData.posts" route-name="posts" />
             </div>
             <RandomPosts />
         </main>
@@ -60,7 +60,7 @@ const pageData:any = reactive({
 
 function getData(id){
     pageData.posts = null
-    const routeLink = id == undefined ? '/api/posts?page=1': `/api/posts?page=${ id }`
+    const routeLink = id == undefined ? 'posts?page=1': `posts?page=${ id }`
     axios.get(routeLink).then(({data}) => {
         pageData.posts = data
     })

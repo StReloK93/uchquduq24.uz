@@ -5,6 +5,10 @@
                 Uchquduq24
             </router-link>
             <main class="flex items-center text-gray-500">
+                <div v-if="authStore.user" class="mr-6 font-normal text-pink-600">
+                    <router-link :to="{name: 'admin', params: {id: 1}}"><i class="fa-solid fa-screwdriver-wrench mr-2"></i> Admin panel </router-link>
+                </div>
+
                 <i class="fa-light fa-clouds "></i>
                 <span class="text-xs ml-1 text-gray-700">{{ weather?.current_weather?.temperature }}</span>
                 <sup class="relative top-[-2px]">&deg;</sup>
@@ -33,13 +37,14 @@
     </section>
 </template>
 <script lang="ts" setup>
-import axios from 'axios';
-import { ref } from 'vue';
+import { useAuthStore } from '@/store/useAuthStore';
+import axios from 'axios'
+import { ref } from 'vue'
+const authStore = useAuthStore()
 const weather = ref()
-const instance = axios.create()
+const instance = axios.create({})
+instance.defaults.headers.common['Authorization'] = null
 instance.get('https://api.open-meteo.com/v1/forecast?latitude=42.08&longitude=63.45&hourly=temperature_2m&current_weather=true&windspeed_unit=ms&forecast_days=1').then(({ data }) => {
     weather.value = data
-}).catch((error) => {
-    console.log(error)
 })
 </script>

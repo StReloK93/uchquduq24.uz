@@ -10,7 +10,7 @@
     </aside>
 
     <aside v-else>
-        <img v-if="imgFail" :src="`https://uchquduq24.uz/img/${post.post_img}`" @error="imgFail = false" class="w-full h-full absolute top-0 left-0 object-cover group-hover:scale-110 transition-all">
+        <img v-if="imgFail" :src="`/img/${post.images[0]?.src}`" @error="imgFail = false" class="w-full h-full absolute top-0 left-0 object-cover group-hover:scale-110 transition-all">
         <div v-else class="w-full h-full absolute top-0 left-0 bg-gray-200">
 
         </div>

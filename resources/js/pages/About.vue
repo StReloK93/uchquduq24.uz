@@ -11,7 +11,7 @@
                                     Uchquduq
                                 </div>
                             </aside>
-                            <img src="/img/1.jpg" class="w-full h-72 object-cover">
+                            <img src="/images/1.jpg" class="w-full h-72 object-cover">
                         </main>
                     </div>
                     <div class="w-1/2 relative  mb-1 pl-0.5">
@@ -21,7 +21,7 @@
                                     Oltin ko'l
                                 </div>
                             </aside>
-                            <img src="/img/3.jpg" class="w-full h-72 object-cover">
+                            <img src="/images/3.jpg" class="w-full h-72 object-cover">
                         </main>
                     </div>
                 </main>
@@ -31,7 +31,7 @@
                             Karvon
                         </div>
                     </aside>
-                    <img src="/img/4.jpg" class="w-full h-72 object-cover">
+                    <img src="/images/4.jpg" class="w-full h-72 object-cover">
                 </div>
                 <main class="text-gray-700">
                     <h3 class="my-4 text-3xl ">
