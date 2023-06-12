@@ -20,6 +20,9 @@ class PostController extends Controller
     }
 
     public function show($id){
+        $post = Post::find($id);
+        $post->increment('counter');
+        $post->save();
         return Post::find($id);
     }
 

@@ -12,7 +12,10 @@
         <main v-else class="bg-gray-100 rounded shadow overflow-hidden relative">
             <article class="absolute inset-0 bg-black/50 z-10 flex justify-center items-center opacity-0 hover:opacity-100 transition-all">
                 <main class="px-2 py-1.5 bg-white rounded-sm">
-                    <router-link :to="{name: 'post' , params: {id: post.id}}" class="px-3 h-8 inline-flex justify-center items-center shadow rounded-sm bg-blue-400 hover:bg-blue-500 active:bg-blue-300">
+                    <button @click="eye" class="px-3 h-8 shadow rounded-sm bg-teal-400 hover:bg-teal-500  active:bg-teal-300">
+                        <i class="fa-solid fa-eye text-white"></i>
+                    </button>
+                    <router-link :to="{name: 'post' , params: {id: post.id}}" class="px-3 h-8 inline-flex justify-center items-center shadow rounded-sm ml-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-300">
                         <i class="fa-duotone fa-sidebar text-white"></i>
                     </router-link >
                     <button @click="emit('edit' , post)" class="px-3 h-8 shadow rounded-sm mx-2 bg-teal-400 hover:bg-teal-500  active:bg-teal-300">
@@ -61,6 +64,12 @@ function textDots(text){
     }
 }
 
+
+function eye(){
+    axios.get(`posts/${post.id}`).then(({data}) => {
+        post.counter = data.counter
+    })
+}
 
 function deletePost(id){
     const swal = Swal.mixin({
