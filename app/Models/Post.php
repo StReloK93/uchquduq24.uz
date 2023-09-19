@@ -20,7 +20,7 @@ class Post extends Model
         'created_at' => 'date:Y-m-d',
     ];
 
-    protected $fillable = ['post_name', 'post_desc', 'created_at', 'post_type', 'post_img', ];
+    protected $fillable = ['post_name', 'post_desc', 'created_at', 'post_type', 'post_img', 'counter' ];
 
 
     public function images()

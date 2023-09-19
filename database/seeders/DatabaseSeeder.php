@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use DB;
+use App\Models\User;
+use App\Models\Post;
+use Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,5 +23,20 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // User::create([
+        //     'name' => 'Uchquduq',
+        //     'email' => 'Uchquduq24',
+        //     'password' => Hash::make('zzzz1111*'),
+        // ]);
+
+
+        // Post::create([
+        //     'post_name' => 'Name',
+        //     'post_desc' => 'Name',
+        //     'post_type' => 'photo',
+        //     'post_img' => 'strelok',
+        // ]);
     }
 }
+

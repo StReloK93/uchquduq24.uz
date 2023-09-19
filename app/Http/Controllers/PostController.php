@@ -30,6 +30,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = Post::create([
+            'counter'   => 0,
             'post_name' => $request->name,
             'post_desc' => $request->description,
             'post_type' => 'photo',
